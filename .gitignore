@@ -7,7 +7,7 @@
 ## Plugins
 
 pathogen.vim
-vim/.vim/bundle/*/
+.vim/bundle/*/
 
 ## Temp files
 
