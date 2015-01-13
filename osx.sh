@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Ask for the administrator password upfront
 sudo -v
@@ -10,6 +10,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
+
+#Disable window animations
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -206,6 +209,25 @@ defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
+# Dock items
+
+dockutil --remove all
+
+dockutil --add /Applications/Safari.app
+dockutil --add /Applications/Mail.app
+dockutil --add /Applications/Notes.app
+dockutil --add /Applications/Messages.app
+dockutil --add /Applications/iTunes.app
+dockutil --add /Applications/Settings.app
+dockutil --add /Applications/Things.app
+dockutil --add /Applications/Xcode.app
+dockutil --add /Applications/iTerm.app
+dockutil --add /Applications/Sublime\ Text\ 2.app
+dockutil --add /Applications/Tweetbot.app
+
+dockutil --add '/Applications' --view grid --display folder --sort name
+dockutil --add '~/Downloads' --view fan --display stack --sort dateadded
+
 # Safari
 
 # Privacy: don’t send search queries to Apple
@@ -312,8 +334,64 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 # Enable Debug Menu in the Mac App Store
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
+# TextEdit
+
+# Disable the ruler
+defaults write com.apple.TextEdit ShowRuler 0
+
+# Xcode
+
+# Trim trailing whitespace
+defaults write com.apple.dt.Xcode DVTTextEditorTrimTrailingWhitespace -bool true
+
+# Trim whitespace only lines
+defaults write com.apple.dt.Xcode DVTTextEditorTrimWhitespaceOnlyLines -bool true
+
+# Don't show completion on escape
+defaults write com.apple.dt.Xcode DVTTextShowCompletionsOnEsc -bool false
+
+# Show line numbers
+defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -bool true
+
+# Hide the code folding ribbon
+defaults write com.apple.dt.Xcode DVTTextShowFoldingSidebar -bool false
+
+# Enable automatic updates
+defaults write com.apple.dt.Xcode DVTDownloadableAutomaticUpdate -bool true
+
+# Live issues
+defaults write com.apple.dt.Xcode IDEEnableLiveIssues -bool true
+
+# Continue building after errors
+defaults write com.apple.dt.Xcode IDEBuildingContinueBuildingAfterErrors -bool true
+
+# Show ruler at 80 chars
+defaults write com.apple.dt.Xcode DVTTextShowPageGuide -bool true
+defaults write com.apple.dt.Xcode DVTTextPageGuideLocation -int 80
+
+# Max number of lines
+defaults write com.apple.dt.Xcode IDEIssueNavigatorDetailLevel -int 10
+defaults write com.apple.dt.Xcode IDESearchNavigatorDetailLevel -int 10
+
+# Enable internal debug menu
+defaults write com.apple.dt.Xcode ShowDVTDebugMenu -bool true
+
+# Source control local revision side
+defaults write com.apple.dt.Xcode DVTComparisonOrientationDefaultsKey -int 0
+
+# Stack assitant editors vertically
+defaults write com.apple.dt.Xcode AssistantEditorsLayout -int 1
+
+# Use open quickly to open in the focused pane
+defaults write com.apple.dt.Xcode IDEEditorCoordinatorTarget_Click -string FocusedEditor
+
+# Disable source control
+defaults write com.apple.dt.Xcode IDESourceControlEnableSourceControl_5_0 -bool false
+defaults write com.apple.dt.Xcode IDESourceControlEnableSourceControl_5_1 -bool false
+
+
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
+	"Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer Xquartz" \
 	"Terminal"; do
 	killall "${app}" > /dev/null 2>&1
 done
