@@ -1,0 +1,16 @@
+# General
+
+*.DS_Store
+
+# Vim
+
+## Plugins
+
+pathogen.vim
+vim/.vim/bundle/*/
+
+## Temp files
+
+*.un~
+*.swp
+*.netrwhist

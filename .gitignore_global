@@ -1,0 +1,51 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+tignore
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Scratch files
+
+## diffs
+*.diff
+*.patch
+
+# tags
+tags
+!tags/
+
+# vim
+
+## undo files
+*.un~
+## netrwhistory
+*.netrwhist
+
+# Compiled sources
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Ruby
+.rake_t_cache
+
+# Misc
+*.log
+*~
+*.bak
+.vagrant/
+.idea/
+Desktop.ini
+tmp/**/*
+!tmp/cache/.keep
+.bundle
+.env
