@@ -43,7 +43,6 @@ brew install git-extras
 brew install git-flow
 brew install imagemagick
 brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
-brew install opencv
 brew install lftp
 brew install optipng
 brew install pv
