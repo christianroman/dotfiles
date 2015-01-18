@@ -1,15 +1,5 @@
 #!/bin/bash
 
-#install zsh
-echo 'Installing oh-my-zhs'
-
-rm -rf $HOME/.oh-my-zsh
-curl -L http://install.ohmyz.sh | sh
-
-#symlink zsh prefs
-rm $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
-
 # Homebrew
 
 if test ! $(which brew); then
