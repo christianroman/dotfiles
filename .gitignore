@@ -8,6 +8,7 @@
 
 #pathogen.vim
 #.vim/bundle/*/
+.vim/backups
 
 ## Temp files
 
