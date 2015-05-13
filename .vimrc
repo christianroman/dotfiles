@@ -175,3 +175,7 @@ let g:indent_guides_guide_size = 1
 "let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 "let g:SuperTabDefaultCompletionType="context"
 "let g:SuperTabContextDefaultCompletionType="<C-X><C-O>"
+
+"================== Alternate ===================
+autocmd FileType objc let g:alternateExtensions_h = "m"
+autocmd FileType objc let g:alternateExtensions_m = "h"
