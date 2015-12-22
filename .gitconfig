@@ -1,6 +1,6 @@
 [user]
 	name = Christian Roman
-	email = chroman16@gmail.com
+	email = "(none)"
 
 [apply]
 	whitespace = fix
@@ -43,6 +43,7 @@
 
 [mergetool]
 	prompt = false
+	keepBackup = false
 
 [merge]
 	tool = Kaleidoscope
