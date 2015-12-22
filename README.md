@@ -3,9 +3,7 @@
 ## Personal dotfiles
 Vim symbolic links
 
-``bash
-ln -s ~/dotfiles/.vim ~/.vim
-`
+`ln -s ~/dotfiles/.vim ~/.vim`
 `ln -s ~/dotfiles/.vimrc ~/.vimrc`
 `ln -s ~/dotfiles/.aliases ~/.aliases`
 `ln -s ~/dotfiles/.bash_profile ~/.bash_profile`
