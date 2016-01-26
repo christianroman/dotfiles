@@ -30,11 +30,9 @@ brew install curl
 brew install wget
 brew install reattach-to-user-namespace
 brew install ctags --HEAD
-brew install lighttpd
 brew install tree
 brew install htop
 brew install watch
-brew install fortune
 brew install sloccount
 brew install python
 brew install pngcrush
